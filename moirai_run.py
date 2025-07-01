@@ -8,10 +8,7 @@ from uni2ts.model.moirai import MoiraiForecast, MoiraiModule
 from utils.utils import load_test_data
 
 MODEL = "moirai"  # model name: choose from {'moirai', 'moirai-moe'}
-
-PSZ = "auto"  # patch size: choose from {"auto", 8, 16, 32, 64, 128}
 BSZ = 32  # batch size: any positive integer
-TEST = 100  # test set length: any positive integer
 
 
 def load_model(PDT, CTX):

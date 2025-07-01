@@ -1,21 +1,15 @@
-from collections import defaultdict
 import pandas as pd
 import numpy as np
 from chronos import ChronosBoltPipeline
-import multiprocessing
 
 import torch
 import argparse
 import os
 import time
-from gluonts.dataset.pandas import PandasDataset
-from gluonts.dataset.split import split
 from gluonts.itertools import batcher
 from utils.utils import load_test_data
 
-PSZ = "auto"  # patch size: choose from {"auto", 8, 16, 32, 64, 128}
 BSZ = 32  # batch size: any positive integer
-TEST = 100  # test set length: any positive integer
 VOCAB_SIZE = 4096
 
 def load_model():

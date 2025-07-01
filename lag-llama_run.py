@@ -10,17 +10,14 @@ import os
 import time
 from utils.utils import load_test_data
 
-PSZ = "auto"  # patch size: choose from {"auto", 8, 16, 32, 64, 128}
 BSZ = 32  # batch size: any positive integer
-TEST = 100  # test set length: any positive integer
-num_samples = 100
 
 
 def load_model(PDT, CTX, ckpt_path="model_ckpts/lag-llama.ckpt"):
     gpu_num = 0
     device = torch.device(f"cuda:{gpu_num}") if torch.cuda.is_available() else torch.device('cpu')
     # Load Model
-    ckpt = torch.load(ckpt_path, map_location=device, weights_only=False) # Uses GPU since in this Colab we use a GPU.
+    ckpt = torch.load(ckpt_path, map_location=device, weights_only=False)
     estimator_args = ckpt["hyper_parameters"]["model_kwargs"]
 
     return LagLlamaEstimator(

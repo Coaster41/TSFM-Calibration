@@ -9,9 +9,7 @@ import time
 from gluonts.itertools import batcher
 from utils.utils import load_test_data
 
-PSZ = "auto"  # patch size: choose from {"auto", 8, 16, 32, 64, 128}
 BSZ = 32  # batch size: any positive integer
-TEST = 100  # test set length: any positive integer
 VOCAB_SIZE = 4096
 
 def load_model():
