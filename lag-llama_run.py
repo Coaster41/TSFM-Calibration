@@ -35,7 +35,7 @@ def load_model(PDT, CTX, ckpt_path="model_ckpts/lag-llama.ckpt"):
         n_head=estimator_args["n_head"],
         scaling=estimator_args["scaling"],
         time_feat=estimator_args["time_feat"],
-        rope_scaling=None, # ???
+        rope_scaling=None, 
 
         batch_size=BSZ,
         num_parallel_samples=100,
